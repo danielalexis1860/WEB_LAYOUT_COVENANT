@@ -77,11 +77,14 @@
   .info-cards {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
     margin-top: 1.5rem;
   }
   
   .card {
     text-align: center;
+    flex: 1 1 200px; /* Responsive card sizes */
+    margin: 1rem;
   }
   
   .illustration {
@@ -121,5 +124,66 @@
     text-align: center;
     padding: 1rem 0;
     color: #666;
+  }
+  
+  /* RESPONSIVENESS */
+  
+  /* For tablets and small screens */
+  @media (max-width: 768px) {
+    .hero-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .hero .text {
+      margin-bottom: 1rem;
+    }
+  
+    .hero .image-placeholder {
+      margin-top: 1rem;
+    }
+  
+    .info-cards {
+      flex-direction: column; /* Stack cards vertically */
+      align-items: center;
+    }
+  
+    .card {
+      width: 100%; /* Full width for cards */
+      max-width: 300px;
+    }
+  
+    .nav-links a {
+      margin-left: 1rem; /* Adjust spacing */
+    }
+  }
+  
+  /* For mobile screens */
+  @media (max-width: 480px) {
+    .header .container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .nav-links {
+      margin-top: 0.5rem;
+    }
+  
+    .hero .text h1 {
+      font-size: 1.5rem;
+    }
+  
+    .hero .btn {
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+  
+    .info {
+      padding: 1rem 0;
+    }
+  
+    .cta {
+      padding: 1.5rem 0;
+    }
   }
   
